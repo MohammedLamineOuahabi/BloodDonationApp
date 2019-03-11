@@ -1,2 +1,2 @@
 # BloodDonationApp
-a platform that alert blood donors if a patient make a donation request
+A platform that alert blood donors if a patient make a donation request.
