@@ -5,6 +5,7 @@ html,
 body {
   height: 100%;
   background-color: rgb(143, 31, 31);
+  font-family: 'Cairo', sans-serif;
 }
 
 body {
