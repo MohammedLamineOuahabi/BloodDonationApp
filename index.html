@@ -8,6 +8,7 @@
   <meta name="author" content="Blood donation,donor,paitent">
   <meta name="generator" content="BloodDonation">
   <title>Blood Donation app</title>
+  <link href='/images/blood-drop.png' rel='icon' type='image/x-icon' />
 
   <!--link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">-->
 
@@ -22,41 +23,49 @@
 <body class="text-center">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-    <header class="masthead mb-auto">
+    <header>
       <div class="inner">
-        <!--  <img class="mb-1 masthead-brand" src="/images/bootstrap-solid.svg" alt="" width="50" height="50">-->
-
         <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link mr-2 active" href="#">الرئسية</a>
           <a class="nav-link" href="#">اتصل بنا</a>
-
         </nav>
       </div>
     </header>
 
-    <main role="main" class="inner cover">
-      <h1 class="main-title mt-3">منصة تبرع</h1>
-      <h3 class="main-subtitle mt-3">تبرع هي منصة تصل المرضى بالمتبرعين</h3>
-      <form class="form-signin">
-        <h5 class="form-title mb-3">الرجاء تسجيل الدخول</h2>
+    <main role="main" class="inner">
+      <h1 class="main-title mt-5">منصة تبرع</h1>
+      <h3 class="main-subtitle mt-1"> صِلَة بين المرضى والمتبرعين بالدم</h3>
+      <form class="form-sign">
+        <!--   <h5 class="form-title mb-3">الرجاء تسجيل الدخول</h2> -->
+        <input type="tel" id="inputTel" class="form-control" placeholder="رقم الهاتف" required autocomplete="off"
+          autofocus onfocus="this.value=''">
+        <input type="
+            password" id="inputPassword" class="form-control mb-3" placeholder="الكود" required
+          autocomplete="off" onfocus="this.value=''">
 
-          <input type="tel" id="inputEmail" class="form-control" placeholder="رقم الهاتف" required autofocus>
-
-          <input type="password" id="inputPassword" class="form-control" placeholder="الكود" required>
-          <div class="checkbox mb-3">
+        <!--           <div class=" checkbox mb-3">
             <label>
               <input type="checkbox" value="remember-me"> Remember me
             </label>
-          </div>
-          <button class="btn btn-lg btn-default btn-block " type="submit">دخول</button>
+          </div> -->
+        <button class="btn btn-md btn-default btn-block mb-3" type="submit">دخول</button>
+        <div>
+          <p class=" m-1">مستخدم جديد <a href="">سجل</a></label>
+            <p class="m-1">استرجاع الكود <a href="">من هنا</a></p>
+        </div>
       </form>
     </main>
 
-    <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <span class="mb-5 ">تبرع &copy; 2019</span>
       </div>
+
+
     </footer>
+
+
+
   </div>
 </body>
 
