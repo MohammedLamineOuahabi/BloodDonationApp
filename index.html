@@ -24,7 +24,7 @@
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
     <header>
-      <div class="inner">
+      <div>
         <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link mr-2 active" href="#">الرئسية</a>
           <a class="nav-link" href="#">اتصل بنا</a>
@@ -32,16 +32,18 @@
       </div>
     </header>
 
-    <main role="main" class="inner">
+    <main role="main">
       <h1 class="main-title mt-5">منصة تبرع</h1>
       <h3 class="main-subtitle mt-1"> صِلَة بين المرضى والمتبرعين بالدم</h3>
       <form class="form-sign">
         <!--   <h5 class="form-title mb-3">الرجاء تسجيل الدخول</h2> -->
-        <input type="tel" id="inputTel" class="form-control" placeholder="رقم الهاتف" required autocomplete="off"
+        <input type="tel" id="inputTel" class="form-control mb-2" placeholder="رقم الهاتف" required autocomplete="off"
           autofocus onfocus="this.value=''">
         <input type="
-            password" id="inputPassword" class="form-control mb-3" placeholder="الكود" required
+            password" id="inputPassword" class="form-control mb-2" placeholder="الكود" required
           autocomplete="off" onfocus="this.value=''">
+        <input type="captcha" id="captcha" class="form-control mb-2" placeholder="5+9 =?" required autocomplete="off"
+          autofocus onfocus="this.value=''">
 
         <!--           <div class=" checkbox mb-3">
             <label>
@@ -49,9 +51,9 @@
             </label>
           </div> -->
         <button class="btn btn-md btn-default btn-block mb-3" type="submit">دخول</button>
-        <div>
-          <p class=" m-1">مستخدم جديد <a href="">سجل</a></label>
-            <p class="m-1">استرجاع الكود <a href="">من هنا</a></p>
+        <div class="user-options">
+          <p class="mb-1">مستخدم جديد <a href="">سجل</a></p>
+          <p class="mb-1">استرجاع الكود <a href="">من هنا</a></p>
         </div>
       </form>
     </main>

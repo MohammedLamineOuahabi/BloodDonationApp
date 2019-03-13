@@ -1,7 +1,11 @@
+token
+DevWebData/3qb2WAvcfTQg5QW
+9e4bb6fcedcd4e792ba44b1ae8d50b3259f06d8a
+5d2cb961df2031c9e6bdffe990356d1a
+
 git config --global user.name "Med Lamine"
 git config --global user.email ouahabimohammedlamine@gmail.com
 
-token
+npm i -g purgecss
+purgecss --css main.css --content *.html --outsultCSS
 
-9e4bb6fcedcd4e792ba44b1ae8d50b3259f06d8a
-5d2cb961df2031c9e6bdffe990356d1a

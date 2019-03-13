@@ -34,19 +34,15 @@ a:hover {
 .btn-default {
   color: #fff;
   text-shadow: none;
-  background-color: rgb(138, 3, 3);
+  background-color: rgb(97, 2, 2);
   border: .05rem solid #fff;
-
 }
 
 .btn-default:hover {
   color: #fff;
   text-shadow: none;
-  background-color: rgb(99, 3, 3);
+  background-color: rgba(95, 2, 2, 0.808);
   border: .05rem solid #fff;
-  -webkit-transition: width 15s;
-  /* Safari */
-  transition: width 15s
 }
 
 /*
@@ -90,7 +86,9 @@ a:hover {
   font-weight: bold;
 }
 
-
+.main-subtitle {
+  padding: 0 1.5rem;
+}
 
 .form-sign {
   width: 100%;
@@ -118,14 +116,14 @@ a:hover {
 
 .form-sign input[type="tel"] {
   margin-bottom: 10px;
+  /*  border-bottom-right-radius: 0;
+   /  border-bottom-left-radius: 0;*/
 }
 
 .form-sign input[type="password"] {
   margin-bottom: 10px;
-}
-
-.user-options {
-  text-align: right;
+  /* border-top-left-radius: 0;
+   border-top-right-radius: 0;*/
 }
 
 /*
@@ -137,7 +135,6 @@ a:hover {
   width: auto;
   max-width: 680px;
   padding: auto 15px;
-  font-weight: bold;
 }
 
 
