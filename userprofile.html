@@ -1,0 +1,99 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Blood donation,donor,patient">
+  <meta name="generator" content="BloodDonation">
+  <title>منصة تبرع</title>
+  <link href='/images/blood-drop.png' rel='icon' type='image/x-icon' />
+
+  <!--link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">-->
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"
+    integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Cairo:400,900&amp;subset=arabic" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="main.css" rel="stylesheet">
+  <script type="text/javascript" src="/main.js"></script>
+</head>
+
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+    <header>
+      <div>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link mr-2 active" href="/index.html">الرئسية</a>
+          <a class="nav-link" href="/contactus.html">اتصل بنا</a>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <form class="form-sign mt-3">
+        <div class=" mb-5">
+          <h5 class="form-title "> معلومات المستخدم </h5>
+          <h3 class="ml-2" dir="ltr"><u>+213-555-811-350</u></h3>
+        </div>
+        <div class="mb-2 align-right">
+          <div class="form-check form-check-inline  ">
+            <h5 class="mr-2">اسجل كــ</h5>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+              onclick="handleClick(this);">
+            <label class="form-check-label" for="inlineRadio1">&nbsp;متبرع</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
+              onclick="handleClick(this);">
+            <label class="form-check-label" for="inlineRadio2">&nbsp;مريض</label>
+          </div>
+        </div>
+        <div class="align-right">
+          <h5 class="mb-2"> حدد زمرة دمك</h5>
+        </div>
+        <div class="btn-group btn-group-justified mb-2 pb-0" data-toggle="buttons">
+
+          <label class="btn btn-secondary  mb-0">A+</label>
+          <label class="btn btn-danger mb-0"> A- </label>
+          <label class="btn btn-danger mb-0"> B+ </label>
+          <label class="btn btn-danger mb-0"> B- </label>
+          <label class="btn btn-danger mb-0"> O+ </label>
+          <label class="btn btn-danger mb-0"> O- </label>
+          <label class="btn btn-danger mb-0"> AB+ </label>
+          <label class="btn btn-danger mb-0"> AB- </label>
+        </div>
+        <input type="tel" id="inputCodePost" class="form-control mb-2" placeholder="الرمز البريدي" required
+          autocomplete="off" autofocus onfocus="this.value=''">
+        <input type="captcha" id="captcha" class="form-control mb-4" placeholder="5+9 =?" required autocomplete="off"
+          autofocus onfocus="this.value=''">
+
+        <!--           <div class=" checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div> -->
+        <button class="btn btn-md btn-default btn-block mb-3" type="submit">تعديل</button>
+
+      </form>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <span class="mb-5 ">تبرع &copy; 2019</span>
+      </div>
+
+
+    </footer>
+
+
+
+  </div>
+
+</body>
+
+</html>

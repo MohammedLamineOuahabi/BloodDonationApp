@@ -7,5 +7,9 @@ git config --global user.name "Med Lamine"
 git config --global user.email ouahabimohammedlamine@gmail.com
 
 npm i -g purgecss
-purgecss --css main.css --content *.html --outsultCSS
+purgecss --css main.css --content *.html --out result
+
+********  bootstrap **********************************
+width:100%   :    w-100
+margin-top   :    mt-0,1,...
 
