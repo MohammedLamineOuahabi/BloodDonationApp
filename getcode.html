@@ -13,12 +13,14 @@
   <!--link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">-->
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"
-    integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Cairo:400,900&amp;subset=arabic" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="main.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+  <script type="text/javascript" src="/main.js"></script>
 </head>
 
 <body class="text-center">
@@ -38,11 +40,14 @@
     </header>
 
     <main role="main">
-      <h1 class="main-title mt-5">منصة تبرع</h1>
-      <h3 class="main-subtitle mt-1"> صِلَة بين المرضى والمتبرعين بالدم</h3>
+      <div class="main-header ">
+        <h1 class="main-title pt-3">منصة تبرع</h1>
+        <h3 class="main-subtitle pb-3"> صِلَة المرضى بالمتبرعين بالدم</h3>
+      </div>
+
       <form class="form-sign">
         <h5 class="form-title mb-3"> استرجاع الكود</h5>
-        <input type="tel" id="inputTel" class="form-control mb-2" placeholder="رقم الهاتف" required autocomplete="off"
+        <input type="tel" id="tel" lang="en" dir="ltr" class="form-control mb-2" placeholder="رقم الهاتف" required autocomplete="off"
           autofocus onfocus="this.value=''">
         <input type="captcha" id="captcha" class="form-control mb-2" placeholder="5+9 =?" required autocomplete="off"
           autofocus onfocus="this.value=''">
