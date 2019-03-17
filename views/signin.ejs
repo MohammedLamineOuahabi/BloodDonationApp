@@ -1,0 +1,20 @@
+<%-include("partials/header")-%>
+<main role="main">
+    <div class="main-header ">
+        <h1 class="main-title pt-3">منصة تبرع</h1>
+        <h3 class="main-subtitle pb-3"> صِلَة المرضى بالمتبرعين بالدم</h3>
+    </div>
+    <form class="form-sign">
+        <h5 class="form-title mb-3"> إنشاء حساب جديد</h5>
+        <input type="text" id="tel" lang="en" dir="ltr" class="form-control mb-2" placeholder="رقم الهاتف" required
+            autocomplete="off" autofocus onfocus="this.value=''">
+        <input type="captcha" id="captcha" lang="en" dir="ltr" class="form-control mb-2" placeholder="5+9 =?" required
+            autocomplete="off" autofocus onfocus="this.value=''">
+        <button class="btn btn-md btn-default btn-block mb-3 " type="submit">سجل</button>
+        <div class="user-options">
+            <p class="mb-1">تسجيل <a href="/">الدخول</a></p>
+
+        </div>
+    </form>
+</main>
+<%-include("partials/footer")-%>

@@ -13,3 +13,5 @@ purgecss --css main.css --content *.html --out result
 width:100%   :    w-100
 margin-top   :    mt-0,1,...
 
+npm i -g nodemon //nodemon will be installed globally to your system path.
+
