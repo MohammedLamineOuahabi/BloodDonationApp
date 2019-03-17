@@ -28,11 +28,11 @@
     <header>
       <div>
         <nav class="nav nav-masthead justify-content-center">
+          <% if ( _connected===true ){ %>
           <a class="nav-link  active" href="/">الرئسية</a>
+          <a class="nav-link" href="/userprofile.html">تحديث المعلومات </a>
+          <% } %>
           <a class="nav-link" href="/contactus.html">اتصل بنا</a>
-          <a class="nav-link" href="/userprofile.html">الحساب </a>
-          <a class="nav-link" href="/addrequest.html">طلب تبرع</a>
-          <a class="nav-link" href="/donorprofile.html"> المتبرع</a>
         </nav>
       </div>
     </header>

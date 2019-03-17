@@ -1,11 +1,9 @@
-<%-include("partials/header")-%>
+<%- include("partials/header") -%>
 <main role="main">
     <div class="main-header ">
         <h1 class="main-title pt-3">منصة تبرع</h1>
-        <h3 class="main-subtitle pb-3"> صِلَة المرضى بالمتبرعين بالدم</h3>
+        <h4 class="main-subtitle pb-3"> صِلَة المرضى بالمتبرعين بالدم</h4>
     </div>
-
-
     <form action="/" class="form-sign" method="POST">
         <h5 class="form-title mb-3">الرجاء تسجيل الدخول</h5>
 
@@ -16,12 +14,6 @@
             autocomplete="off" onfocus="this.value=''" maxlength="5">
         <input type="captcha" name="captcha" id="captcha" class="form-control mb-2" placeholder="5+9 =?" required
             autocomplete="off" autofocus onfocus="this.value=''" maxlength="5">
-
-        <!--           <div class=" checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div> -->
         <button class="btn btn-md btn-default btn-block mb-3" type="submit">دخول</button>
         <div class="user-options">
             <p class="mb-1"> إنشاء <a href="/signin.html">حساب جديد</a></p>
@@ -29,4 +21,4 @@
         </div>
     </form>
 </main>
-<%-include("partials/footer")-%>
+<%- include("partials/footer") -%>

@@ -6,8 +6,9 @@ const request = require("request");
 const _tel = "+213(7) 77-77-77-77";
 const _password = "0000";
 const _captcha = "0";
-const _newUser = true;
-const _userType = 'donor';
+const _newUser = false;
+const _userType = 'patient';
+var _connected = false;
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -16,25 +17,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get("/", function (req, res) {
-    res.render("index");
+    res.render('index', { _connected: _connected });
 });
 app.get("/userprofile.html", function (req, res) {
-    res.render("userprofile");
+    res.render("userprofile", { _connected: _connected });
 });
 app.get("/donorprofile.html", function (req, res) {
-    res.render("donorprofile");
+    res.render("donorprofile", { _connected: _connected });
 });
 app.get("/getcode.html", function (req, res) {
-    res.render("getcode");
+    res.render("getcode", { _connected: _connected });
 });
 app.get("/signin.html", function (req, res) {
-    res.render("signin");
+    res.render("signin", { _connected: _connected });
 });
 app.get("/contactus.html", function (req, res) {
-    res.render("contactus");
+    res.render("contactus", { _connected: _connected });
 });
 app.get("/addrequest.html", function (req, res) {
-    res.render("addrequest");
+    res.render("addrequest", { _connected: _connected });
 });
 
 app.post("/", function (req, res) {
@@ -45,6 +46,7 @@ app.post("/", function (req, res) {
 
     if ((_tel === tel) && (_password === password) && (_captcha === captcha)) {
 
+        _connected = true;
         if (_newUser) {
             console.log("new user");
             res.redirect('/userprofile.html');
@@ -56,7 +58,7 @@ app.post("/", function (req, res) {
             }
             else {
                 console.log("patient login.");
-                res.redirect('/patientprofile.html');
+                res.redirect('/addrequest.html');
             }
         }
     } else {
