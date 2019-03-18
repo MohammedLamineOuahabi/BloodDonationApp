@@ -101,10 +101,12 @@ a:hover {
 /*
   * ***************    Header
   */
-  .nav-masthead{
+header{
     margin-bottom: 25px;
+    
+    margin: 0 auto;
   }
-
+.nav-masthead{  width: 380px;}
 .nav-masthead .nav-link {
   margin-left: 1.1rem;
   padding: .25rem 0;

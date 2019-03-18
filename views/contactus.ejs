@@ -3,26 +3,13 @@
     <div class="main-header">
         <h3 class="main-subtitle pt-3 pb-3"> يسرنا تواصلك معنا</h3>
     </div>
-
     <form class="form-sign">
-
         <input type="tel" id="nom" class="form-control mb-2" placeholder="الاسم" required autocomplete="off" autofocus
             onfocus="this.value=''">
-
         <textarea class="form-control  mb-2" id="exampleFormControlTextarea1" rows="3"></textarea>
         <input type="captcha" id="captcha" class="form-control mb-2" placeholder="5+9 =?" required autocomplete="off"
             autofocus onfocus="this.value=''">
-
-        <!--           <div class=" checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div> -->
         <button class="btn btn-md btn-default btn-block mb-3" type="submit">ارسل</button>
-        <div class="user-options">
-            <p class="mb-1"> إنشاء <a href="/signin.html">حساب جديد</a></p>
-            <p class="mb-1">استرجاع الكود <a href="/getcode.html">من هنا</a></p>
-        </div>
     </form>
 </main>
 <%-include("partials/footer")-%>
