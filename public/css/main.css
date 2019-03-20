@@ -68,15 +68,16 @@ a:hover {
 }
 
 .main-header {
-   background-color: #5902021a;
    max-width: 380px;
    width: 100%;
    padding: 20px auto;
    margin: 20px auto;
    color: darkred;
+   /*    background-color: #5902021a;
    border-radius: 15px;
    box-shadow: 0 0 8px #252523;
    border: none;
+ */
 }
 
 .btn-bt {
@@ -149,7 +150,7 @@ header {
    margin: auto;
    color: darkred;
    border-radius: 15px;
-   background-color: #5902021a;
+   background-color: #59020204;
    box-shadow: 0 0 8px #252523;
    border: none;
    /* background: url(/images/bg.jpg);  
