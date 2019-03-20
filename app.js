@@ -1,105 +1,118 @@
 //jshint esversion: 6
 const express = require("express");
 const bodyParser = require("body-parser");
-const request = require("request");
-const path = require('path');
 
-const _tel = "+213(7) 77-77-77-77";
-const _password = "0000";
-const _captcha = "0";
-const _newUser = false;
-const _userType = 'patient';
+let _tel = "+213-777-777-777";
+let _password = "0000";
+let _newUser = true;
+let _userType = 'P'; // P:patient , D:Donor , A:Admin
 let _connected = false;
 
 const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(bodyParser.urlencoded({
+   extended: true
+}));
+app.use(bodyParser.json());
 
 app.get("/", function (req, res) {
-    res.render('index', { _connected: _connected, _userType: _userType });
+   res.render('login', {
+      _connected: _connected,
+      _userType: _userType
+   });
 });
-app.get("/userprofile.html", function (req, res) {
-    res.render("userprofile", { _connected: _connected, _userType: _userType });
+app.get("/userprofile", function (req, res) {
+   res.render("userprofile", {
+      _connected: _connected,
+      _tel: _tel,
+      _userType: _userType
+   });
 });
-app.get("/donorstate.html", function (req, res) {
-    res.render("donorstate", { _connected: _connected, _userType: _userType });
+app.get("/donorstate", function (req, res) {
+   res.render("donorstate", {
+      _connected: _connected,
+      _userType: _userType
+   });
 });
-app.get("/getcode.html", function (req, res) {
-    res.render("getcode", { _connected: _connected, _userType: _userType });
+app.get("/getcode", function (req, res) {
+   res.render("getcode", {
+      _connected: _connected,
+      _userType: _userType
+   });
 });
-app.get("/signin.html", function (req, res) {
-    res.render("signin", { _connected: _connected, _userType: _userType });
+app.get("/signin", function (req, res) {
+   res.render("signin", {
+      _connected: _connected,
+      _userType: _userType
+   });
 });
-app.get("/contactus.html", function (req, res) {
-    res.render("contactus", { _connected: _connected, _userType: _userType });
+app.get("/contactus", function (req, res) {
+   res.render("contactus", {
+      _connected: _connected,
+      _userType: _userType
+   });
 });
-app.get("/addrequest.html", function (req, res) {
-    res.render("addrequest", { _connected: _connected, _userType: _userType });
+app.get("/addrequest", function (req, res) {
+   res.render("addrequest", {
+      _connected: _connected,
+      _tel: _tel,
+      _userType: _userType
+   });
+});
+
+app.post("/userprofile", function (req, res) {
+   _userType = req.body.userType;
+   _bloodType = req.body.bloodType;
+   _wilaya = req.body.wilaya;
+   console.log(_userType + ' ' + _bloodType + ' ' + _wilaya);
+
+   /*userType: D
+   bloodType: A
+   wilaya: 01*/
+   if (_userType === 'P') {
+      console.log('patient request');
+      res.redirect("/addrequest");
+
+   } else if (_userType === 'D') {
+      console.log('donor request');
+      res.redirect("/donorstate");
+   } else {
+      /**admin */
+      console.log('admin request');
+   }
+
 });
 
 app.post("/", function (req, res) {
-    let tel = req.body.tel;
-    let password = req.body.password;
-    let captcha = req.body.captcha;
-    console.log(tel + ' ' + password + ' ' + captcha);
+   let tel = req.body.tel;
+   let password = req.body.password;
+   console.log(tel + ' ' + password);
 
-    if ((_tel === tel) && (_password === password)) {
+   if ((_tel === tel) && (_password === password)) {
 
-        /**************************** * /
+      _connected = true;
+      if (_newUser) {
+         console.log("new user");
+         res.redirect('/userprofile');
+      } else {
+         if (_userType === 'donor') {
+            console.log("donor login.");
+            res.redirect('/donorstate');
+         } else {
+            console.log("patient login.");
+            res.redirect('/addrequest');
+         }
+      }
 
-
-        if (req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-            return res.json({ "responseError": "Please select captcha first" });
-        }
-        const secretKey = "6LcDZpgUAAAAAE9L-G2KGIqAaqcGuP6kVKE9KKFt";
-
-        const verificationURL = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-
-        request(verificationURL, function (error, response, body) {
-            body = JSON.parse(body);
-
-            if (body.success !== undefined && !body.success) {
-                return res.json({ "responseError": "Failed captcha verification" });
-            }
-            res.json({ "responseSuccess": "Sucess" });
-        });
-        /**************************** */
-
-
-        _connected = true;
-        if (_newUser) {
-            console.log("new user");
-            res.redirect('/userprofile.html');
-        }
-        else {
-            if (_userType === 'donor') {
-                console.log("donor login.");
-                res.redirect('/donorstate.html');
-            }
-            else {
-                console.log("patient login.");
-                res.redirect('/addrequest.html');
-            }
-        }
-    } else {
-        console.log("error.");
-        res.redirect("/");
-    }
-
-
-    app.post('/', function (req, res) {
-
-    });
-
-
-
+   } else {
+      console.log("error.");
+      res.redirect("/");
+   }
 
 });
 
 app.listen(3000, function (req, res) {
-    console.log('Server Starting at port 3000');
+   console.log('Server Starting at port 3000');
 
 });
-

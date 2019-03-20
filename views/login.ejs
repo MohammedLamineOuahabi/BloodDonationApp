@@ -1,0 +1,20 @@
+<%- include("partials/header") -%>
+<main role="main">
+   <div class="main-header ">
+      <h1 class="main-title pt-3">منصة تبرع</h1>
+      <h4 class="main-subtitle pb-3"> صِلَة المرضى بالمتبرعين بالدم</h4>
+   </div>
+   <form action="/" class="form-sign" method="POST">
+
+      <div class="mb-2  label">الهاتف </div>
+      <input type="text" name="tel" id="tel" lang="en" dir="ltr" class="form-control mb-2" placeholder="رقم الهاتف" required autocomplete="off" autofocus onfocus="this.value=''">
+
+      <input type="password" name="password" id="Password" class="form-control mb-2  " placeholder="الكود" required autocomplete="off" onfocus="this.value=''" maxlength="5">
+
+      <%- include("partials/captcha") -%>
+
+      <button class="btn btn-md btn-default btn-block" type="submit">دخول</button>
+   </form>
+</main>
+<%- include("partials/captchajs") -%>
+<%- include("partials/footer") -%>

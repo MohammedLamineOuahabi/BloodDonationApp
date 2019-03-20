@@ -1,30 +1,23 @@
 <%- include('partials/header'); -%>
 <main role="main">
-    <div class="main-header">
-        <h5 class="pt-3"> اضافة طلب تبرع </h5>
-        <h3 class="pb-3" dir="ltr">+213-555-811-350</h3>
-    </div>
-    <form class="form-sign mt-3">
-        <div class="mb-2 align-right">
-            <h5 class="w-100">سلامتك, كيف تصف حالتك؟</h5>
-            <div class="form-check form-check-inline  ">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
-                    onclick="handleClick(this);">
-                <label class="form-check-label" for="inlineRadio1">&nbsp;مستقرة</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
-                    onclick="handleClick(this);">
-                <label class="form-check-label" for="inlineRadio2">&nbsp;حرجة</label>
-            </div>
+   <div class="main-header">
+      <h5 class="pt-3"> اضافة طلب تبرع </h5>
+      <h3 class="pb-3" dir="ltr"><%=_tel%></h3>
+   </div>
 
-        </div>
+   <form class="form-sign mt-3">
 
-        <input type="tel" id="inputCodePost" class="form-control mb-2" placeholder="حدد مكان تواجدك" required
-            autocomplete="off" autofocus onfocus="this.value=''">
-        <input type="captcha" id="captcha" class="form-control mb-4" placeholder="5+9 =?" required autocomplete="off"
-            autofocus onfocus="this.value=''" required maxlength="30">
-        <button class="btn btn-md btn-default btn-block mb-3" type="submit">اضف الطلب</button>
-    </form>
+      <div class="mb-2 label ">سلامتك, كيف تصف حالتك؟</div>
+      <select dir="rtl" name="PatientState" class="mdb-select mb-2 md-form colorful-select dropdown-primary " style="border:none;">
+         <option value="S" autofocus>مستقرة</option>
+         <option value="D">حرجة</option>
+      </select>
+      <%- include("partials/wilaya") -%>
+      <input type="tel" id="adress" class="form-control mb-2" placeholder="حدد مكان تواجدك: المشفى,..." required autocomplete="off" onfocus="this.value=''" maxlength="40">
+
+      <%- include("partials/captcha") -%>
+      <button class="btn btn-md btn-default btn-block" type="submit">اضف الطلب</button>
+   </form>
 </main>
+<%- include("partials/captchajs") -%>
 <%- include('partials/footer') -%>
