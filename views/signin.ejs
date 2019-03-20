@@ -4,12 +4,13 @@
       <h1 class="main-title pt-3">منصة تبرع</h1>
       <h3 class="main-subtitle pb-3"> صِلَة المرضى بالمتبرعين بالدم</h3>
    </div>
-   <form class="form-sign">
+   <form class="form-sign mt-3 mb-3">
       <h5 class="form-title mb-3"> إنشاء حساب جديد</h5>
       <input type="text" id="tel" lang="en" dir="ltr" class="form-control mb-2" placeholder="رقم الهاتف" required autocomplete="off" autofocus onfocus="this.value=''">
-      <input type="captcha" id="captcha" lang="en" dir="ltr" class="form-control mb-2" placeholder="5+9 =?" required autocomplete="off" autofocus onfocus="this.value=''">
+      <%- include("partials/captcha") -%>
       <button class="btn btn-md btn-default btn-block" type="submit">سجل</button>
 
    </form>
 </main>
+<%- include("partials/captchajs") -%>
 <%-include("partials/footer")-%>

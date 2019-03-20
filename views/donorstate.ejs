@@ -4,26 +4,21 @@
       <h5 class="form-title pt-3">معلومات المتبرع </h5>
       <h3 class="pb-3 " dir="ltr">+213-555-811-350</h3>
    </div>
-   <form class="form-sign mt-3">
+   <form class="form-sign mt-3 mb-3">
       <H5 class=""> هل انت متاح حاليا للتبرع </H5>
       <div class=" ">
 
-         <label class="switch mb-2  ">
-            <input type="checkbox" checked>
+         <label class="switch mb-2">
+            <input type="checkbox" name="donorStat" checked>
             <span class="slider round"></span>
          </label>
       </div>
 
-      <input type="tel" id="inputCodePost" class="form-control mb-2" placeholder="الرمز البريدي" required autocomplete="off" autofocus onfocus="this.value=''">
-      <input type="captcha" id="captcha" class="form-control mb-4" placeholder="5+9 =?" required autocomplete="off" autofocus onfocus="this.value=''">
-
-      <!--           <div class=" checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div> -->
+      <%- include("partials/wilaya") -%>
+      <%- include("partials/captcha") -%>
       <button class="btn btn-md btn-default btn-block" type="submit">تعديل</button>
 
    </form>
 </main>
+<%- include("partials/captchajs") -%>
 <%-include("partials/footer")-%>
