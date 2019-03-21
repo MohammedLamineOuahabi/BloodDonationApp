@@ -1,11 +1,15 @@
 <%-include("partials/header")-%>
 <main role="main">
    <div class="main-header">
-      <h3 class="main-subtitle pt-3 pb-3"> يسرنا تواصلك معنا</h3>
+      <h3> يسرنا تواصلك معنا</h3>
    </div>
-   <form class="form-sign mt-3 mb-3">
-      <input type="tel" id="nom" class="form-control mb-2" placeholder="الاسم" required autocomplete="off" autofocus onfocus="this.value=''">
-      <textarea class="form-control  mb-2" id="exampleFormControlTextarea1" rows="3"></textarea>
+   <form class="form-sign  ">
+
+      <span style="position: relative; ">
+         <span class="fas fa-user  errspan"></span>
+         <input type="tel" id="nom" class="form-control " placeholder="الاسم" required autocomplete="off" autofocus onfocus="this.value=''">
+      </span>
+      <textarea class="form-control mt-3 " id="exampleFormControlTextarea1" rows="3"></textarea>
       <%- include("partials/captcha") -%>
       <button class="btn btn-md btn-default btn-block" type="submit">ارسل</button>
    </form>

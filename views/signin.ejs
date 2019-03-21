@@ -1,12 +1,15 @@
 <%-include("partials/header")-%>
 <main role="main">
-   <div class="main-header ">
-      <h1 class="main-title pt-3">منصة تبرع</h1>
-      <h3 class="main-subtitle pb-3"> صِلَة المرضى بالمتبرعين بالدم</h3>
+   <div class="main-header">
+      <h1>منصة تبرع</h1>
+      <h4> صِلَة المرضى بالمتبرعين بالدم</h4>
    </div>
-   <form action="/signin" method="POST" class="form-sign mt-3 mb-3">
-      <h5 class="form-title mb-3"> إنشاء حساب جديد</h5>
-      <input type="text" id="tel" main="tel" lang="en" dir="ltr" class="form-control mb-2" placeholder="رقم الهاتف" required autocomplete="off" autofocus onfocus="this.value=''">
+   <form action="/signin" method="POST" class="form-sign  ">
+      <h5 class="form-title "> إنشاء حساب جديد</h5>
+      <span style="position: relative; ">
+         <span class="fas fa-mobile-alt  fa-fw errspan"></span>
+         <input type="text" id="tel" main="tel" lang="en" dir="ltr" class="form-control " placeholder="رقم الهاتف" required autocomplete="off" autofocus onfocus="this.value=''">
+      </span>
       <%- include("partials/captcha") -%>
       <button class="btn btn-md btn-default btn-block" type="submit">سجل</button>
 

@@ -1,29 +1,37 @@
 <%-include("partials/header")-%>
 <main role="main">
    <div class="main-header ">
-      <h5 class="form-title pt-3"> معلومات المستخدم </h5>
-      <h3 class="pb-3 " dir="ltr">
-         <%=_tel%>
-      </h3>
+      <h5> معلومات المستخدم </h5>
+      <h3> <%=_tel%> </h3>
    </div>
-   <form action="/userprofile" method="POST" class="form-sign mt-3">
-      <div class="mb-2  label">اسجل كــ</div>
-      <select dir="rtl" name="userType" class="mdb-select mb-2 md-form colorful-select dropdown-primary" style="border:none;">
-         <option value="D" autofocus>متبرع</option>
-         <option value="P">مريض</option>
-      </select>
+   <form action="/userprofile" method="POST" class="form-sign ">
+
+      <div class="  label">اسجل كــ</div>
+
+      <span style="position: relative; ">
+         <select dir="rtl" name="userType" class="mdb-select  md-form colorful-select dropdown-primary" style="border:none;">
+            <option value="D" autofocus>متبرع</option>
+            <option value="P">مريض</option>
+         </select>
+         <span class="fas fa-user   selectspan"></span>
+      </span>
+
       <!--Blue select-->
-      <div class="mb-2  label">زمرة الدم</div>
-      <select dir="rtl" name="bloodType" class="mdb-select mb-2 md-form colorful-select dropdown-primary " style="border:none;">
-         <option value="A">A+</option>
-         <option value="A-">A-</option>
-         <option value="B+">B+</option>
-         <option value="B-">B-</option>
-         <option value="AB+">AB+</option>
-         <option value="AB-">AB-</option>
-         <option value="O+">O+</option>
-         <option value="O-">O-</option>
-      </select>
+      <div class="  label">زمرة الدم</div>
+      <span style="position: relative; ">
+         <select dir="rtl" name="bloodType" class="mdb-select  md-form colorful-select dropdown-primary " style="border:none;">
+            <option value="A">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+         </select>
+         <span class="fas fa-fire   selectspan"></span>
+      </span>
+
       <!--/Blue select-->
 
       <%- include("partials/wilaya") -%>

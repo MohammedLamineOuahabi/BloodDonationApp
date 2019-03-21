@@ -23,18 +23,32 @@ app.get("/", function (req, res) {
    });
 });
 app.get("/userprofile", function (req, res) {
-   res.render("userprofile", {
-      _connected: _connected,
-      _tel: _tel,
-      _userType: _userType
-   });
+   if (_connected === false) {
+      res.render("login", {
+         _connected: _connected,
+         _userType: _userType
+      });
+   } else {
+      res.render("userprofile", {
+         _connected: _connected,
+         _tel: _tel,
+         _userType: _userType
+      });
+   }
 });
 app.get("/donorstate", function (req, res) {
-   res.render("donorstate", {
-      _connected: _connected,
-      _tel: _tel,
-      _userType: _userType
-   });
+   if (_connected === false) {
+      res.render("login", {
+         _connected: _connected,
+         _userType: _userType
+      });
+   } else {
+      res.render("donorstate", {
+         _connected: _connected,
+         _tel: _tel,
+         _userType: _userType
+      });
+   }
 });
 app.get("/getcode", function (req, res) {
    res.render("getcode", {
@@ -43,17 +57,12 @@ app.get("/getcode", function (req, res) {
    });
 });
 app.get("/signin", function (req, res) {
-   if (_connected === false) {
-      res.render("signin", {
-         _connected: _connected,
-         _userType: _userType
-      });
-   } else {
-      res.render("login", {
-         _connected: _connected,
-         _userType: _userType
-      });
-   }
+
+   res.render("signin", {
+      _connected: _connected,
+      _userType: _userType
+   });
+
 });
 app.get("/contactus", function (req, res) {
    res.render("contactus", {
@@ -62,11 +71,18 @@ app.get("/contactus", function (req, res) {
    });
 });
 app.get("/addrequest", function (req, res) {
-   res.render("addrequest", {
-      _connected: _connected,
-      _tel: _tel,
-      _userType: _userType
-   });
+   if (_connected === false) {
+      res.render("login", {
+         _connected: _connected,
+         _userType: _userType
+      });
+   } else {
+      res.render("addrequest", {
+         _connected: _connected,
+         _tel: _tel,
+         _userType: _userType
+      });
+   }
 });
 
 app.post("/userprofile", function (req, res) {

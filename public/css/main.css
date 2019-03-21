@@ -9,13 +9,10 @@ body {
 }
 
 body {
-   display: -ms-flexbox;
-   display: flex;
-   -ms-flex-align: center;
+
    align-items: center;
    padding-top: 0px;
    padding-bottom: 0px;
-   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .3);
    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .3);
 }
 
@@ -30,7 +27,6 @@ body {
 /* Links */
 a {
    color: #590202;
-
 }
 
 a:focus,
@@ -42,12 +38,24 @@ a:hover {
 
 /* Custom default button */
 .btn-default {
-   margin-top: 1.6rem;
+   margin: 1rem auto;
    color: #fff;
    text-shadow: none;
    background-color: #590202;
    border-radius: 10px;
    font-weight: normal;
+   box-shadow: 0 0 8px #252523;
+   border: none;
+
+}
+
+.btn-default:hover {
+   /*   color: darkred;   background-color: #fff;border-color: darkred;
+  */
+   transition: .15s;
+   box-shadow: 0 0 8px #f1f1ee;
+   border: none;
+   color: #fff;
 
 }
 
@@ -67,19 +75,6 @@ a:hover {
    border-radius: 0;
 }
 
-.main-header {
-   max-width: 380px;
-   width: 100%;
-   padding: 20px auto;
-   margin: 20px auto;
-   color: darkred;
-   /*    background-color: #5902021a;
-   border-radius: 15px;
-   box-shadow: 0 0 8px #252523;
-   border: none;
- */
-}
-
 .btn-bt {
    padding-left: 3px;
    padding-right: auto;
@@ -89,14 +84,6 @@ a:hover {
 .btn-danger:hover {
    color: #fff;
    transition: .15s;
-}
-
-.btn-default:hover {
-   color: darkred;
-   background-color: #fff;
-   transition: .15s;
-   border-color: darkred;
-
 }
 
 /*
@@ -139,15 +126,66 @@ header {
 /*
   * ***************   main 
   */
+
+.main-header {
+   max-width: 380px;
+   width: 96%;
+   margin: 15px auto;
+   color: darkred;
+}
+
+.main-header h1,
+h2,
+h3,
+h4,
+h5 {
+
+   margin: 0;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   direction: ltr;
+
+}
+
 .main-title {
    font-weight: bold;
 }
 
+/* **************** glyph ***********************/
+select {
+   box-shadow: 0 0 5px #252523;
+   width: 100%;
+   margin-bottom: 10px;
+   margin-top: 5px;
+   position: relative;
+
+}
+
+.errspan {
+   position: absolute;
+   float: left;
+   top: 10px;
+   left: -157;
+   z-index: 4;
+   color: rgb(161, 122, 122);
+}
+
+.selectspan {
+   position: absolute;
+   float: left;
+   top: 8px;
+   left: 18px;
+   z-index: 4;
+   color: rgb(161, 122, 122);
+}
+
+/*****************************************************/
+
 .form-sign {
    width: 100%;
    max-width: 380px;
-   padding: 10px;
-   margin: auto;
+   padding: 15px;
+   margin: 0 auto;
    color: darkred;
    border-radius: 15px;
    background-color: #59020204;
@@ -161,40 +199,20 @@ header {
 }
 
 .form-sign .form-control {
-   position: relative;
-   box-sizing: border-box;
-   height: auto;
-   width: 90%;
-   padding: auto 10px;
-   margin: auto;
-   font-size: 16px;
+   text-align: right;
    color: darkred;
-   box-shadow: 0 0 8px #252523;
+   box-shadow: 0 0 5px #252523;
    border: none;
-}
-
-select {
-   box-shadow: 0 0 8px #252523;
-   border: none;
-   width: 90%;
-   padding: auto 10px;
-   margin: auto;
+   margin-bottom: 10px;
 }
 
 .label {
-   width: 90%;
-   padding: auto 10px;
-   margin: auto;
    text-align: right;
+   margin: 0;
 }
 
 .form-sign .form-control:focus {
    z-index: 2;
-}
-
-label {
-   font-size: 18px;
-   vertical-align: middle;
 }
 
 /*
@@ -203,18 +221,31 @@ label {
 
 .container {
    width: auto;
-   max-width: 680px;
-   padding: auto 15px;
-   font-weight: bold;
+   margin: 0;
+   padding: 0;
+
+}
+
+footer {
+   padding: 0;
+   margin: 0;
+}
+
+footer p {
+   padding: 0;
+   margin: 0;
+}
+
+footer h4 {
+   padding: 0;
+   margin: 0;
 }
 
 /***************   captcha **********************/
 .jCaptchaText {
-
-   width: auto;
    padding: 10px 10px;
    background-color: darkred;
-
+   margin: 10px;
 }
 
 .jCaptcha {
