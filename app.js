@@ -7,6 +7,8 @@ let _password = "0000";
 let _newUser = true;
 let _userType = 'P'; // P:patient , D:Donor , A:Admin
 let _connected = false;
+let _msg = "الرجاء تسجيل دخولك .";
+let _msgType = "offline";
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -70,10 +72,18 @@ app.get("/contactus", function (req, res) {
       _userType: _userType
    });
 });
+app.get("/message", function (req, res) {
+   res.render("message", {
+      _connected: _connected,
+      _userType: _userType,
+      _msg: _msg,
+      _msgType: _msgType
+   });
+});
 app.get("/addrequest", function (req, res) {
    if (_connected === false) {
       res.render("login", {
-         _connected: _connected,
+         _connected: false,
          _userType: _userType
       });
    } else {
@@ -84,7 +94,16 @@ app.get("/addrequest", function (req, res) {
       });
    }
 });
+//The 404 Route (ALWAYS Keep this as the last route)
+app.get('*', function (req, res) {
+   /*    res.status(404).render('404_error_template', {
+         title: "Sorry, page not found"
+      }); */
 
+   _msg = "صفحة غير موجودة";
+   _msgType = "error";
+   res.status(404).redirect("/message");
+});
 app.post("/userprofile", function (req, res) {
    _userType = req.body.userType;
    _bloodType = req.body.bloodType;
@@ -111,6 +130,13 @@ app.post("/signin", function (req, res) {
    //_regTel = req.body.tel;
    //console.log(_tel);
    res.redirect("/");
+});
+app.post("/addrequest", function (req, res) {
+   //_regTel = req.body.tel;
+   //console.log(_tel);
+   _msg = "لقد تم استقبال طلبكم بنجاح";
+   _msgType = "success";
+   res.redirect("/message");
 });
 
 app.post("/", function (req, res) {

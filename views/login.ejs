@@ -1,22 +1,25 @@
 <%- include("partials/header") -%>
-<main role="main">
-   <div class="main-header ">
-      <h1>منصة تبرع</h1>
-      <h4> صِلَة المرضى بالمتبرعين بالدم</h4>
+<section class="main">
+   <div class="container">
+      <div class="row h-100 align-items-center   justify-content-center" style=" ">
+
+         <div class="main-title col-12 col-md-4 col-sm-12" style=" ">
+            <h1 class="h1-responsive font-weight-bold ">منصة تبرع</h1>
+            <hr class="hr-light">
+            <h6 class="mb-4 text-md-right">الجَزائِر أو، وب هي دولة عربية ذات سيادة تقع في شمال أفريقيا. عاصمتها وأكثر مدنها اكتظاظا بالسكان هي مدينة الجزائر، وتقع في أقصى شمال البلاد. بمساحة تبلغ 2،381،741 كيلومتر مربع، الجزائر هي عاشر أكبر بلد في العالم.</h6>
+         </div>
+         <form action="/" class="form-sign col-12  col-md-4 col-sm-12" style=" " method="POST">
+
+            <span class="fas fa-mobile-alt   input-icon"></span>
+            <input type="text" name="tel" id="tel" lang="en" dir="ltr" class="form-control  " placeholder="رقم الهاتف" required autocomplete="off" autofocus onfocus="this.value=''">
+
+            <span class="fas fa-key  input-icon"></span>
+            <input type="password" name="password" id="Password" class="form-control   " placeholder="الكود" required autocomplete="off" onfocus="this.value=''" maxlength="5">
+
+            <%- include("partials/captcha") -%>
+            <button class="btn btn-danger btn-block" type="submit">دخول</button>
+         </form>
+      </div>
    </div>
-   <form action="/" class="form-sign" method="POST">
-      <h5 class="form-title "> دخول</h5>
-
-      <span style="position: relative; "><span class="fas fa-mobile-alt   errspan"></span>
-         <input type="text" name="tel" id="tel" lang="en" dir="ltr" class="form-control  " placeholder="رقم الهاتف" required autocomplete="off" autofocus onfocus="this.value=''">
-      </span>
-
-      <span style="position: relative; "><span class="fas fa-key  errspan"></span>
-         <input type="password" name="password" id="Password" class="form-control   " placeholder="الكود" required autocomplete="off" onfocus="this.value=''" maxlength="5">
-      </span>
-      <%- include("partials/captcha") -%>
-      <button class="btn btn-md btn-default btn-block" type="submit">دخول</button>
-   </form>
-</main>
-<%- include("partials/captchajs") -%>
+</section>
 <%- include("partials/footer") -%>

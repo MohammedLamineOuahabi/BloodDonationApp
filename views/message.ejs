@@ -1,0 +1,21 @@
+<%-include("partials/header")-%>
+
+<div class="notify ">
+
+   <% if ( _msgType==="success" ){ %><h1 class="successbox">تمت العملية بنجاح </h1><% } %>
+   <% if ( _msgType==="error" ){ %> <h1 class="errorbox"> خطأ </h1><% } %>
+   <% if ( _msgType==="offline" ){ %> <h1 class="errorbox"> خطأ </h1><% } %>
+
+   <span class="alerticon">
+      <% if ( _msgType==="success" ){ %>
+      <i class="fas fa-check-circle fa-3x .errorbox" style="color:green;"><% } %>
+         <% if ( _msgType==="error" ){ %>
+         <i class="fas fa-exclamation-circle fa-3x " style="color:red;"><% } %>
+            <% if ( _msgType==="offline" ){ %>
+            <i class="fas fa-exclamation-circle fa-3x " style="color:red;"><% } %>
+
+            </i>
+   </span>
+   <p><%=_msg%></p>
+</div>
+<%-include("partials/footer")-%>
