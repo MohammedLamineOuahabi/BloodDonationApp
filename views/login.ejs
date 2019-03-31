@@ -1,25 +1,35 @@
 <%- include("partials/header") -%>
-<section class="main">
-   <div class="container">
-      <div class="row h-100 align-items-center   justify-content-center" style=" ">
 
-         <div class="main-title col-12 col-md-4 col-sm-12" style=" ">
-            <h1 class="h1-responsive font-weight-bold ">منصة تبرع</h1>
-            <hr class="hr-light">
-            <h6 class="mb-4 text-md-right">الجَزائِر أو، وب هي دولة عربية ذات سيادة تقع في شمال أفريقيا. عاصمتها وأكثر مدنها اكتظاظا بالسكان هي مدينة الجزائر، وتقع في أقصى شمال البلاد. بمساحة تبلغ 2،381،741 كيلومتر مربع، الجزائر هي عاشر أكبر بلد في العالم.</h6>
-         </div>
-         <form action="/" class="form-sign col-12  col-md-4 col-sm-12" style=" " method="POST">
+<div class="container main-body pt-lg-4  pr-md-5 pl-md-5">
+   <div class="row   pt-5 pb-5  pr-md-5 pl-md-5 align-items-center   justify-content-center ">
 
-            <span class="fas fa-mobile-alt   input-icon"></span>
-            <input type="text" name="tel" id="tel" lang="en" dir="ltr" class="form-control  " placeholder="رقم الهاتف" required autocomplete="off" autofocus onfocus="this.value=''">
+      <div class="col-md-6   pb-md-5 pt-0  pr-md-5 pl-md-5 text-right ">
+         <h1 class="h1-responsive text-sm-center text-md-right font-weight-bold ">منصة تبرع</h1>
+         <hr class="hr-light">
+         <h6 class="  main-text  text-justify">الجَزائِر أو، وب هي دولة عربية ذات سيادة تقع في شمال أفريقيا. عاصمتها وأكثر مدنها اكتظاظا بالسكان هي مدينة الجزائر، وتقع في أقصى شمال البلاد. بمساحة تبلغ 2،381،741 كيلومتر مربع، الجزائر هي عاشر أكبر بلد في العالم.</h6>
+      </div>
+      <div class="col-md-6    text-right">
+         <form action="/" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
 
-            <span class="fas fa-key  input-icon"></span>
-            <input type="password" name="password" id="Password" class="form-control   " placeholder="الكود" required autocomplete="off" onfocus="this.value=''" maxlength="5">
+            <div class="input-group mb-3">
+               <input type="text" dir="ltr" class="form-control  text-right" id="tel" name="tel" placeholder="رقم الهاتف" required autocomplete="off" autofocus onfocus="this.value=''">
+               <div class="input-group-prepend">
+                  <span class="input-group-text    form-icon"><i class="fas fa-mobile-alt  mr-auto ml-auto"></i></span>
+               </div>
+            </div>
+
+            <div class="input-group mb-3">
+               <input type="password" class="form-control  text-right" id="Password" name="password" placeholder="الكود" required autocomplete="off" onfocus="this.value=''" maxlength="5">
+               <div class="input-group-prepend">
+                  <span class="input-group-text    form-icon"><i class="fas fa-key  mr-auto ml-auto "></i></span>
+               </div>
+            </div>
 
             <%- include("partials/captcha") -%>
             <button class="btn btn-danger btn-block" type="submit">دخول</button>
          </form>
       </div>
    </div>
-</section>
+</div>
+
 <%- include("partials/footer") -%>

@@ -1,25 +1,41 @@
 <%-include("partials/header")-%>
-<section class="main">
-   <div class="container main-container">
-      <div class="main-title">
-         <h5>معلومات المتبرع </h5>
-         <h3><%=_tel%></h3>
+<div class="container main-body pt-lg-4  pr-md-5 pl-md-5">
+   <div class="row   pt-5 pb-5  pr-md-5 pl-md-5 align-items-center   justify-content-center ">
+
+      <div class="col-md-6   pb-md-5 pt-0  pr-md-5 pl-md-5 text-right ">
+
+         <h2 class="h1-responsive font-weight-bold">معلومات المتبرع </h2>
+         <hr class="hr-light">
+         <h6 class="text-right main-text"> هل انت مستعد حاليا للتبرع؟</h6>
       </div>
-      <form class="form-sign">
+      <div class="col-md-6    text-right">
+         <form action="/addrequest" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
 
-         <h5> هل انت مستعد حاليا للتبرع </H5>
-         <div class="select"> <span class="fas fa-heartbeat  select-icon2"></span>
-            <select dir="rtl" style=" position: relative;" name="donorState" class="mdb-select  md-form colorful-select dropdown-primary ">
-               <option value="S" autofocus>نعم </option>
-               <option value="D">لا</option>
-            </select>
-         </div>
+            <div class="input-group mb-3 ">
+               <div class="input-group-prepend  w-100">
+                  <select dir="rtl" name="donorState" class="custom-select custom-select-md  md-form colorful-select dropdown-primary ">
+                     <option value="S" autofocus>نعم </option>
+                     <option value="D">لا</option>
+                  </select>
 
-         <%- include("partials/wilaya") -%>
-         <%- include("partials/captcha") -%>
-         <button class="btn btn-danger btn-block" type="submit">تعديل</button>
+                  <span class="input-group-text    form-icon"><i class="fas fa-heartbeat  mr-auto ml-auto"></i></span>
+               </div>
+            </div>
+            <%- include("partials/wilaya") -%>
+            <div class="input-group mb-3">
+               <input type="text" dir="ltr" class="form-control  text-right" id="adress" name="adress" placeholder="حدد مكان تواجدك: المشفى,..." required autocomplete="off" onfocus="this.value=''" maxlength="30">
+               <div class="input-group-prepend">
+                  <span class="input-group-text    form-icon"><i class="fas fa-map-marker-alt   mr-auto ml-auto"></i></span>
+               </div>
+            </div>
 
-      </form>
+            <%- include("partials/captcha") -%>
+            <button class="btn btn-danger btn-block" type="submit">دخول</button>
+         </form>
+      </div>
    </div>
-</section>
+</div>
+
+</div>
+
 <%- include("partials/footer") -%>

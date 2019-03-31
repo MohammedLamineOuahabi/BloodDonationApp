@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 let _tel = "+213-777-777-777";
 let _password = "0000";
 let _newUser = true;
-let _userType = 'P'; // P:patient , D:Donor , A:Admin
+let _userType = 'S'; // P:patient , D:Donor , A:Admin
 let _connected = false;
 let _msg = "الرجاء تسجيل دخولك .";
 let _msgType = "offline";
@@ -57,6 +57,11 @@ app.get("/getcode", function (req, res) {
       _connected: _connected,
       _userType: _userType
    });
+
+});
+app.get("/logout", function (req, res) {
+   _connected = false;
+   res.redirect("/");
 });
 app.get("/signin", function (req, res) {
 

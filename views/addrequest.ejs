@@ -1,29 +1,43 @@
 <%- include('partials/header'); -%>
-<section class="main">
-   <div class="container main-container">
-      <div class="main-title ">
-         <h5> اضافة طلب تبرع </h5>
-         <h3> <%=_tel%> </h3>
+
+<div class="container main-body pt-lg-4  pr-md-5 pl-md-5">
+   <div class="row   pt-5 pb-5  pr-md-5 pl-md-5 align-items-center   justify-content-center ">
+
+      <div class="col-md-6   pb-md-5 pt-0  pr-md-5 pl-md-5 text-right ">
+
+         <h1 class="h1-responsive font-weight-bold"> اضافة طلب تبرع </h1>
+         <hr class="hr-light">
+         <h6 class="text-right main-text"> <%=_tel%></h6>
       </div>
-      <form action="/addrequest" method="POST" class="form-sign">
+      <div class="col-md-6    text-right">
+         <form action="/addrequest" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
 
-         <!--  <div class=" label">سلامتك, كيف تصف حالتك؟</div> -->
-         <div class="select">
-            <span class="fas fa-heartbeat   select-icon"></span>
-            <select dir="rtl" name="PatientState" class="mdb-select  md-form colorful-select dropdown-primary ">
-               <option value="S" autofocus>مستقرة</option>
-               <option value="D">حرجة</option>
-            </select>
-         </div>
+            <div class="input-group mb-3 ">
+               <div class="input-group-prepend  w-100">
+                  <select dir="rtl" name="PatientState" class="custom-select custom-select-md  md-form colorful-select dropdown-primary ">
+                     <option value="S" autofocus>مستقرة</option>
+                     <option value="D">حرجة</option>
+                  </select>
+                  <span class="input-group-text    form-icon"><i class="fas fa-heartbeat  mr-auto ml-auto"></i></span>
+               </div>
+            </div>
+            <%- include("partials/wilaya") -%>
+            <div class="input-group mb-3">
+               <input type="text" dir="ltr" class="form-control  text-right" id="adress" name="adress" placeholder="حدد مكان تواجدك: المشفى,..." required autocomplete="off" onfocus="this.value=''" maxlength="30">
+               <div class="input-group-prepend">
+                  <span class="input-group-text    form-icon"><i class="fas fa-map-marker-alt   mr-auto ml-auto"></i></span>
+               </div>
+            </div>
 
-         <%- include("partials/wilaya") -%>
-         <span>
-            <span class="fas fa-map-marker-alt input-icon"></span>
-            <input type="text" id="adress" class="form-control " placeholder="حدد مكان تواجدك: المشفى,..." required autocomplete="off" onfocus="this.value=''" maxlength="30">
-         </span>
-         <%- include("partials/captcha") -%>
-         <button class="btn btn-danger btn-block" type="submit">اضف الطلب</button>
-      </form>
+            <%- include("partials/captcha") -%>
+            <button class="btn btn-danger btn-block" type="submit">دخول</button>
+         </form>
+      </div>
    </div>
-</section>
+</div>
+
+</div>
+
+<!--  <div class=" label">سلامتك, كيف تصف حالتك؟</div> -->
+
 <%- include("partials/footer") -%>

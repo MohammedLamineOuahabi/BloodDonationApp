@@ -1,19 +1,30 @@
 <%-include("partials/header")-%>
-<section class="main">
-   <div class="container main-container">
-      <div class="main-title">
-         <h1>منصة تبرع</h1>
-         <h4> إنشاء حساب جديد</h4>
+<div class="container main-body pt-lg-4  pr-md-5 pl-md-5">
+   <div class="row   pt-5 pb-5  pr-md-5 pl-md-5 align-items-center   justify-content-center " style=" ">
+
+      <div class="col-md-6   pb-md-5 pt-0  pr-md-5 pl-md-5 text-right ">
+
+         <h4> </h4>
+
+         <h1 class="h1-responsive font-weight-bold ">منصة تبرع</h1>
+         <hr class="hr-light">
+         <h6 class="text-right main-text">إنشاء حساب جديد .</h6>
       </div>
-      <form action="/signin" method="POST" class="form-sign  ">
+      <div class="col-md-6    text-right">
+         <form action="/signin" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
 
-         <span class="fas fa-mobile-alt  fa-fw input-icon"></span>
-         <input type="text" id="tel" main="tel" lang="en" dir="ltr" class="form-control " placeholder="رقم الهاتف" required autocomplete="off" autofocus onfocus="this.value=''">
+            <div class="input-group mb-3">
+               <input type="text" dir="ltr" class="form-control  text-right" id="tel" name="tel" placeholder="رقم الهاتف" aria-label="Username" aria-describedby="basic-addon1" required autocomplete="off" autofocus onfocus="this.value=''">
+               <div class="input-group-prepend">
+                  <span class="input-group-text    form-icon"><i class="fas fa-mobile-alt  mr-auto ml-auto"></i></span>
+               </div>
+            </div>
 
-         <%- include("partials/captcha") -%>
-         <button class="btn btn-danger btn-block" type="submit">سجل</button>
-
-      </form>
+            <%- include("partials/captcha") -%>
+            <button class="btn btn-danger btn-block" type="submit">دخول</button>
+         </form>
+      </div>
    </div>
-</section>
+</div>
+
 <%- include("partials/footer") -%>

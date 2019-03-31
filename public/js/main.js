@@ -19,3 +19,11 @@ $(window).load(function () {
       }
    });
 });
+$('input').keypress(function (e) {
+   console.log(e);
+   if (e.which == 13) {
+
+      $(this).next('input').focus();
+      e.preventDefault();
+   }
+});

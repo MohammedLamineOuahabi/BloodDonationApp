@@ -36,3 +36,5 @@ app.listen(port, function(){
 /*************************************************************/
 google site key 6LcDZpgUAAAAAJ-vfw7U5VeNZcPz79LRB0tbfR5w
 google secret key 6LcDZpgUAAAAAE9L-G2KGIqAaqcGuP6kVKE9KKFt
+/*************************************************************/
+   "workbench.editor.enablePreview": false,no restart required
