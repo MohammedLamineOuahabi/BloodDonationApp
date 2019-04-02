@@ -1,9 +1,16 @@
 //jshint esversion: 6
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require('mongoose');
 
-let _tel = "+213-777-777-777";
-let _password = "0000";
+const getRndInteger = require('./functions.js').getRndInteger;
+
+mongoose.connect('mongodb://localhost:27017/bloodDonationDB', {
+   useNewUrlParser: true
+});
+
+let _phoneNumber = "";
+let _code = "";
 let _newUser = true;
 let _userType = 'S'; // P:patient , D:Donor , A:Admin
 let _connected = false;
@@ -17,6 +24,17 @@ app.use(bodyParser.urlencoded({
    extended: true
 }));
 app.use(bodyParser.json());
+
+const User = mongoose.model('User', {
+   phoneNumber: String,
+   userType: String,
+   bloodType: String,
+   cityCode: String,
+   adress: String,
+   code: String
+});
+/* const UserHistory = mongoose.model('UserHistory', { userId: String,date:String,bloodType:String,cityCode:number,adress:String,code:Number });
+ */
 
 app.get("/", function (req, res) {
    res.render('login', {
@@ -33,7 +51,7 @@ app.get("/userprofile", function (req, res) {
    } else {
       res.render("userprofile", {
          _connected: _connected,
-         _tel: _tel,
+         _phoneNumber: _phoneNumber,
          _userType: _userType
       });
    }
@@ -47,7 +65,7 @@ app.get("/donorstate", function (req, res) {
    } else {
       res.render("donorstate", {
          _connected: _connected,
-         _tel: _tel,
+         _phoneNumber: _phoneNumber,
          _userType: _userType
       });
    }
@@ -94,7 +112,7 @@ app.get("/addrequest", function (req, res) {
    } else {
       res.render("addrequest", {
          _connected: _connected,
-         _tel: _tel,
+         _phoneNumber: _phoneNumber,
          _userType: _userType
       });
    }
@@ -109,66 +127,126 @@ app.get('*', function (req, res) {
    _msgType = "error";
    res.status(404).redirect("/message");
 });
+
 app.post("/userprofile", function (req, res) {
    _userType = req.body.userType;
    _bloodType = req.body.bloodType;
-   _wilaya = req.body.wilaya;
-   console.log(_userType + ' ' + _bloodType + ' ' + _wilaya);
+   _cityCode = req.body.city;
+   console.log(_userType + ' ' + _bloodType + ' ' + _cityCode);
 
-   /*userType: D
-   bloodType: A
-   wilaya: 01*/
-   if (_userType === 'P') {
+   User.update({
+      phoneNumber: _phoneNumber
+   }, {
+      userType: _userType,
+      bloodType: _bloodType,
+      cityCode: _cityCode
+   }, function (err, affected, resp) {
+      console.log(resp);
+   })
+
+   if (_userType === 'p') {
       console.log('patient request');
       res.redirect("/addrequest");
 
-   } else if (_userType === 'D') {
+   } else if (_userType === 'd') {
       console.log('donor request');
       res.redirect("/donorstate");
    } else {
       /**admin */
       console.log('admin request');
+      res.redirect("/");
    }
 
 });
 app.post("/signin", function (req, res) {
-   //_regTel = req.body.tel;
-   //console.log(_tel);
-   res.redirect("/");
+   _phoneNumber = req.body.tel;
+   console.log(_phoneNumber);
+   User.find({
+      phoneNumber: _phoneNumber
+   }, function (err, phoneNumbers) {
+
+      if (err) {
+         console.log('find error');
+      }
+      if (!phoneNumbers.length) {
+         // no phone numbers founed
+
+         //generate random number 
+         let _code = getRndInteger(1000, 9999);
+         console.log("random number:" + _code);
+
+         //create a user account
+         const user = new User({
+            phoneNumber: _phoneNumber,
+            code: _code,
+            userType: 'u'
+         });
+
+         user.save().then(() => console.log('user added successfully!'));
+         //send the code
+         _msg = "we send you a code,use it to access";
+         _msgType = "success";
+         res.redirect("/message");
+         //** */
+      } else {
+         //user existe 
+         _msg = "user phone number exist!";
+         _msgType = "error";
+         res.redirect("/message");
+
+      }
+   })
+
 });
 app.post("/addrequest", function (req, res) {
    //_regTel = req.body.tel;
-   //console.log(_tel);
+   //console.log(_phoneNumber);
    _msg = "لقد تم استقبال طلبكم بنجاح";
    _msgType = "success";
    res.redirect("/message");
 });
 
 app.post("/", function (req, res) {
-   let tel = req.body.tel;
-   let password = req.body.password;
-   console.log(tel + ' ' + password + ' ' + _tel + ' ' + _password);
+   _phoneNumber = req.body.tel;
+   _code = req.body.password;
 
-   if ((_tel === tel) && (_password === password)) {
+   User.findOne({
+      phoneNumber: _phoneNumber,
+      code: _code
+   }, function (err, user) {
 
-      _connected = true;
-      if (_newUser) {
-         console.log("new user");
-         res.redirect('/userprofile');
-      } else {
-         if (_userType === 'donor') {
+      if (err) {
+         console.log('error');
+      } else if (user) {
+         //user authenticated
+         _connected = true;
+         console.log('user.userType :' + user.userType);
+         if (user.userType === 'u') {
+            console.log("new user");
+            res.redirect('/userprofile');
+         } else
+         if (user.userType === 'd') {
             console.log("donor login.");
             res.redirect('/donorstate');
-         } else {
+         } else if (user.userType === 'p') {
             console.log("patient login.");
             res.redirect('/addrequest');
+         } else {
+            console.log("unknow login.");
+            res.redirect('/userprofile');
          }
-      }
 
-   } else {
-      console.log("error.");
-      res.redirect("/");
-   }
+      } else {
+         //no user found 
+         console.log(_phoneNumber + '  ' + _code);
+         console.log(user.phoneNumber + '  ' + user.code);
+
+         _msg = "user phone number not exist!";
+         _msgType = "error";
+         res.redirect("/message");
+
+      }
+   });
 
 });
 

@@ -9,6 +9,7 @@
     "ejs-lint": "^0.3.0",
     "eslint": "^5.15.1",
     "express": "^4.16.4",
+    "mongoose": "^5.4.20",
     "nodemon": "^1.18.10",
     "request": "^2.88.0"
   },

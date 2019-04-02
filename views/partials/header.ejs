@@ -43,9 +43,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav">
                   <% if ( _connected===true ){ console.log("user connected"); %>
-                  <% if ( _userType==="D" ){ console.log("donor"); %>
+                  <% if ( _userType==="d" ){ console.log("donor"); %>
                   <li class="nav-item"> <a class="nav-link" href="/donorstate">الرئسية</a></li>
-                  <% } else if ( _userType==="P" ){  console.log("patient");  %>
+                  <% } else if ( _userType==="p" ){  console.log("patient");  %>
                   <li class="nav-item"><a class="nav-link" href="/addrequest">الرئسية</a></li>
                   <% } %>
                   <li class="nav-item"><a class="nav-link" href="/userprofile">تحديث المعلومات </a></li>

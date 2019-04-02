@@ -7,7 +7,7 @@
 
          <h3 class="h1-responsive font-weight-bold"> معلومات المستخدم </h3>
          <hr class="hr-light">
-         <h6 class="text-right main-text" dir="ltr"> <%=_tel%></h6>
+         <h6 class="text-right main-text" dir="ltr"> <%=_phoneNumber%></h6>
       </div>
       <div class="col-md-6    text-right">
          <form action="/userprofile" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
@@ -15,8 +15,8 @@
             <div class="input-group mb-3 ">
                <div class="input-group-prepend  w-100">
                   <select dir="rtl" name="userType" class="custom-select custom-select-md  md-form colorful-select dropdown-primary">
-                     <option value="D" autofocus>متبرع</option>
-                     <option value="P">مريض</option>
+                     <option value="d" autofocus>متبرع</option>
+                     <option value="p">مريض</option>
                   </select>
 
                   <span class="input-group-text    form-icon"><i class="fas fa-user  mr-auto ml-auto"></i></span>
@@ -50,7 +50,7 @@
             </div> -->
 
             <%- include("partials/captcha") -%>
-            <button class="btn btn-danger btn-block" type="submit">دخول</button>
+            <button class="btn btn-danger btn-block" type="submit">تعديل</button>
          </form>
       </div>
    </div>

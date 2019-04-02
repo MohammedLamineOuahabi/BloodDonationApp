@@ -7,7 +7,7 @@
 
          <h1 class="h1-responsive font-weight-bold"> اضافة طلب تبرع </h1>
          <hr class="hr-light">
-         <h6 class="text-right main-text"> <%=_tel%></h6>
+         <h6 class="text-right main-text" dir="ltr"> <%=_phoneNumber%></h6>
       </div>
       <div class="col-md-6    text-right">
          <form action="/addrequest" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
@@ -30,7 +30,7 @@
             </div>
 
             <%- include("partials/captcha") -%>
-            <button class="btn btn-danger btn-block" type="submit">دخول</button>
+            <button class="btn btn-danger btn-block" type="submit">اضافة</button>
          </form>
       </div>
    </div>
