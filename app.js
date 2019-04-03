@@ -6,7 +6,11 @@ const mongoose = require('mongoose');
 const getRndInteger = require('./functions.js').getRndInteger;
 const sendSMS = require('./functions.js').sendSMS;
 
-mongoose.connect('mongodb://localhost:27017/bloodDonationDB', {
+/* mongoose.connect('mongodb://localhost:27017/s', {
+   useNewUrlParser: true
+}); */
+
+mongoose.connect('mongodb+srv://admin-amine:nApMzkQLQQX8Vbj@cluster0-kx6c2.mongodb.net/BDDB', {
    useNewUrlParser: true
 });
 
