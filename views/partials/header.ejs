@@ -25,6 +25,7 @@
    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
 
    <script type="text/javascript" src="js/main.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.8.1/dist/sweetalert2.all.min.js"></script>
    <!-- scripts frameworks -->
    <!-- Custom scripts for this template -->
 
@@ -34,28 +35,29 @@
    <div class="header">
       <div class="container-fluid  ">
 
-         <nav class="navbar navbar-expand-md navbar-light  ">
-            <a class="navbar-brand  " href="/"> <strong>تبرع</strong> </a>
+         <nav class="navbar navbar-expand-md navbar-light pr-0 ">
+            <a class="navbar-brand  mr-0 thelogo" href="/"> <strong>تبرع</strong> </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav">
-                  <% if ( _connected===true ){ console.log("user connected"); %>
-                  <% if ( _userType==="d" ){ console.log("donor"); %>
-                  <li class="nav-item"> <a class="nav-link" href="/donorstate">الرئسية</a></li>
-                  <% } else if ( _userType==="p" ){  console.log("patient");  %>
-                  <li class="nav-item"><a class="nav-link" href="/addrequest">الرئسية</a></li>
+                  <% if ( _connected===true ){ %>
+                  <% if ( _userType==="d" ){  %>
+
+                  <li class="nav-item"> <a class="nav-link <% if ( _active_page==='donorstate' ){ %>active<% } %>" href="/donorstate">المتبرع</a></li>
+                  <% } else if ( _userType==="p" ){     %>
+                  <li class="nav-item"><a class="nav-link <% if ( _active_page==='addrequest' ){ %>active<% } %>" href="/addrequest">المريض</a></li>
                   <% } %>
-                  <li class="nav-item"><a class="nav-link" href="/userprofile">تحديث المعلومات </a></li>
-                  <li class="nav-item"><a class="nav-link" href="/contactus">اتصل بنا</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/logout">خروج </a></li>
-                  <% } else {  console.log("user not connected"); %>
-                  <li class="nav-item"><a class="nav-link" href="/"> الدخول</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/signin">تسجيل</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/getcode">استرجاع الكود</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/contactus">اتصل بنا</a></li>
+                  <li class="nav-item"><a class="nav-link <% if ( _active_page==='userprofile' ){ %>active<% } %>" href="/userprofile">حساب المستخدم </a></li>
+                  <li class="nav-item"><a class="nav-link <% if ( _active_page==='contactus' ){ %>active<% } %>" href="/contactus">اتصل بنا</a></li>
+                  <li class="nav-item"><a class="nav-link <% if ( _active_page==='logout' ){ %>active<% } %>" href="/logout">خروج </a></li>
+                  <% } else {    %>
+                  <li class="nav-item"><a class="nav-link <% if ( _active_page==='/' ){ %>active<% } %>" href="/"> الدخول</a></li>
+                  <li class="nav-item"><a class="nav-link <% if ( _active_page==='signin' ){ %>active<% } %>" href="/signin">التسجيل</a></li>
+                  <li class="nav-item"><a class="nav-link <% if ( _active_page==='getcode' ){ %>active<% } %>" href="/getcode">استرجاع الكود</a></li>
+                  <li class="nav-item"><a class="nav-link <% if ( _active_page==='contactus' ){ %>active<% } %>" href="/contactus">اتصل بنا</a></li>
                   <% } %>
 
                </ul>

@@ -1,18 +1,18 @@
 <%-include("partials/header")-%>
 
-<div class="container main-body pt-lg-4  pr-md-5 pl-md-5">
+<div class="container main-body pt-lg-4    pr-lg-5  pl-lg-5">
    <div class="row  align-items-center   justify-content-center pt-2 pb-5  ">
       <div class="col-md-12   text-right">
-         <h6 class="text-center main-text"> يسرنا تواصلك معنا</h6>
-         <form action="/" class="form    mr-auto ml-auto pt-md-3" method="POST">
+         <h3 class="text-center main-text"> يسرنا تواصلك معنا</h3>
+         <form action="/contactus" class="form    mr-auto ml-auto pt-md-3" method="POST">
 
             <div class="input-group mb-3">
-               <input type="text" dir="ltr" class="form-control  text-right" id="name" name="name" placeholder=" الإسم الكريم" aria-label="Username" aria-describedby="basic-addon1" required autocomplete="off" autofocus onfocus="this.value=''">
+               <input type="text" dir="ltr" class="form-control  text-right" id="name" name="name" placeholder=" الإسم الكريم" aria-label="Username" aria-describedby="basic-addon1" required autocomplete="off" onfocus="this.value=''">
                <div class="input-group-prepend">
                   <span class="input-group-text    form-icon"><i class="fas fa-user  mr-auto ml-auto"></i></span>
                </div>
             </div>
-            <textarea class="form-control  mb-3  " id="exampleFormControlTextarea1" rows="5"></textarea>
+            <textarea class="form-control  mb-3  " name="content" id="exampleFormControlTextarea1" required rows="5"></textarea>
 
             <%- include("partials/captcha") -%>
             <button class="btn btn-danger btn-block" type="submit">دخول</button>

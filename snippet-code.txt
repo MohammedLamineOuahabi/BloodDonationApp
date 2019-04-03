@@ -38,3 +38,17 @@ google site key 6LcDZpgUAAAAAJ-vfw7U5VeNZcPz79LRB0tbfR5w
 google secret key 6LcDZpgUAAAAAE9L-G2KGIqAaqcGuP6kVKE9KKFt
 /*************************************************************/
    "workbench.editor.enablePreview": false,no restart required
+
+   <%
+ var monthNames = [
+      “January”, “February”, “March”,
+      “April”, “May”, “June”, “July”,
+      “August”, “September”, “October”,
+      “November”, “December”
+   ];
+ var d = post.date.getDate();
+ var m = monthNames[post.date.getMonth()];
+ var y = post.date.getFullYear();
+ %>
+
+ <small><%= d+ ’ ‘ +m+ ’ ‘ +y %></small>

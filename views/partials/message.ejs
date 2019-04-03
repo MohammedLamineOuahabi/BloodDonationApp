@@ -1,0 +1,25 @@
+<% if ( locals._msgType   && locals._msg ){ %>
+<% if ( _msgType==="success" ){ %>
+<script>
+   Swal.fire({
+      title: 'ممتاز',
+      text: ' <%= _msg %>',
+      type: 'success',
+      confirmButtonColor: '#aed9a2'
+   });
+</script>
+<% } %>
+
+<% if ( _msgType==="error" || _msgType==="offline" ){ %>
+<script>
+   Swal.fire({
+      type: 'error',
+      title: 'خطـــأ',
+      text: '<%=_msg%>!',
+      confirmButtonColor: 'red'
+      /* footer: '<a href>Why do I have this issue?</a>' */
+   });
+   console.log('<%=_msgType%>');
+</script>
+<% } %>
+<% } %>

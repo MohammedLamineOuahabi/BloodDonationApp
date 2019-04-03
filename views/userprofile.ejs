@@ -1,13 +1,14 @@
 <%-include("partials/header")-%>
 
-<div class="container main-body pt-lg-4  pr-md-5 pl-md-5">
-   <div class="row   pt-5 pb-5  pr-md-5 pl-md-5 align-items-center   justify-content-center ">
+<div class="container main-body pt-lg-4    pr-lg-5  pl-lg-5">
+   <div class="row   pt-5 pb-5    pr-lg-5  pl-lg-5 align-items-center   justify-content-center ">
 
-      <div class="col-md-6   pb-md-5 pt-0  pr-md-5 pl-md-5 text-right ">
+      <div class="col-md-6     pb-md-5 pt-0    pr-lg-5  pl-lg-5 text-right ">
 
-         <h3 class="h1-responsive font-weight-bold"> معلومات المستخدم </h3>
+         <h3 class="h1-responsive font-weight-bold">معلومات المتبرع </h3>
+         <h2 dir="ltr"><%=_phoneNumber%></h2>
          <hr class="hr-light">
-         <h6 class="text-right main-text" dir="ltr"> <%=_phoneNumber%></h6>
+
       </div>
       <div class="col-md-6    text-right">
          <form action="/userprofile" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
@@ -15,7 +16,7 @@
             <div class="input-group mb-3 ">
                <div class="input-group-prepend  w-100">
                   <select dir="rtl" name="userType" class="custom-select custom-select-md  md-form colorful-select dropdown-primary">
-                     <option value="d" autofocus>متبرع</option>
+                     <option value="d">متبرع</option>
                      <option value="p">مريض</option>
                   </select>
 
