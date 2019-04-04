@@ -280,7 +280,7 @@ app.post("/signin", function (req, res) {
          //** */
       } else {
          //user existe 
-         _msg = "رقم الهاتف غير موجود ";
+         _msg = "رقم الهاتف  موجود ";
          _msgType = "error";
          res.redirect("/signin");
 
