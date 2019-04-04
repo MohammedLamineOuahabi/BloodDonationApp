@@ -96,10 +96,11 @@ h3 {
 /*      form        */
 .form {
 
-   width: 300px;
-   min-width: 300px;
-   padding: 0;
+   width: 320px;
+   min-width: 320px;
+   padding: 10px;
    opacity: 0.9;
+   background-color: #fff3;
 }
 
 .form-control {
