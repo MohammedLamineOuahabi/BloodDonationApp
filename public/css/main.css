@@ -24,7 +24,8 @@ html {
    padding: 0;
    position: relative;
    min-height: 100%;
-
+   background-image: -webkit-linear-gradient(65deg, #e38983 50%, #fdeae4 50%);
+   background-size: cover;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
    padding: 0;
    font-family: 'Cairo', sans-serif;
    margin-bottom: 80px;
-   background-image: -webkit-linear-gradient(65deg, #e38983 50%, #fdeae4 50%);
+   background: none;
 }
 
 hr {
@@ -70,6 +71,11 @@ hr {
 }
 
 /****************************    BODY   *****************************/
+
+.row {
+   min-height: 400px;
+}
+
 .main-text-bloc {
 
    padding-left: 30px;
