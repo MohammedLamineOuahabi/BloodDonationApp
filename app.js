@@ -74,6 +74,25 @@ app.get("/", function (req, res) {
    _msgType = "0";
 
 });
+app.get("/patienHistory", function (req, res) {
+   if (_connected === false) {
+      _msg = "الرجاء تسجيل دخولك .";
+      _msgType = "error";
+      res.redirect('/');
+
+   } else {
+      res.render("userprofile", {
+         _connected: _connected,
+         _phoneNumber: _phoneNumber,
+         _userType: _userType,
+         _msg: _msg,
+         _msgType: _msgType,
+         _active_page: "userprofile"
+      });
+
+   }
+   _msgType = "0";
+});
 app.get("/userprofile", function (req, res) {
    if (_connected === false) {
       _msg = "الرجاء تسجيل دخولك .";
@@ -140,6 +159,7 @@ app.get("/signin", function (req, res) {
 
 });
 app.get("/contactus", function (req, res) {
+
    res.render("contactus", {
       _connected: _connected,
       _userType: _userType,
@@ -148,6 +168,7 @@ app.get("/contactus", function (req, res) {
       _active_page: "contactus"
    });
    _msgType = "0";
+
 });
 
 app.get("/addrequest", function (req, res) {

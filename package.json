@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "budgetsms-node": "0.0.2",
     "ejs": "^2.6.1",
     "ejs-lint": "^0.3.0",
     "eslint": "^5.15.1",

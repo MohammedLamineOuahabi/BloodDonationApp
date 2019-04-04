@@ -52,3 +52,7 @@ google secret key 6LcDZpgUAAAAAE9L-G2KGIqAaqcGuP6kVKE9KKFt
  %>
 
  <small><%= d+ ’ ‘ +m+ ’ ‘ +y %></small>
+
+ git add .
+git commit -m "Procfile"
+git push heroku master
