@@ -20,6 +20,7 @@ let _userType = 'S'; // P:patient , D:Donor , A:Admin
 let _connected = false;
 let _msg = "";
 let _msgType = "0";
+let _testMode = true;
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -68,6 +69,8 @@ app.get("/", function (req, res) {
       _connected: _connected,
       _userType: _userType,
       _msg: _msg,
+      _code: _code,
+      _testMode: _testMode,
       _msgType: _msgType,
       _active_page: "/"
    });
@@ -86,6 +89,8 @@ app.get("/patienHistory", function (req, res) {
          _phoneNumber: _phoneNumber,
          _userType: _userType,
          _msg: _msg,
+         _code: _code,
+         _testMode: _testMode,
          _msgType: _msgType,
          _active_page: "userprofile"
       });
@@ -105,6 +110,8 @@ app.get("/userprofile", function (req, res) {
          _phoneNumber: _phoneNumber,
          _userType: _userType,
          _msg: _msg,
+         _code: _code,
+         _testMode: _testMode,
          _msgType: _msgType,
          _active_page: "userprofile"
       });
@@ -123,6 +130,8 @@ app.get("/donorstate", function (req, res) {
          _phoneNumber: _phoneNumber,
          _userType: _userType,
          _msg: _msg,
+         _code: _code,
+         _testMode: _testMode,
          _msgType: _msgType,
          _active_page: "donorstate"
       });
@@ -135,6 +144,8 @@ app.get("/getcode", function (req, res) {
       _connected: _connected,
       _userType: _userType,
       _msg: _msg,
+      _code: _code,
+      _testMode: _testMode,
       _msgType: _msgType,
       _active_page: "getcode"
    });
@@ -152,6 +163,8 @@ app.get("/signin", function (req, res) {
       _connected: _connected,
       _userType: _userType,
       _msg: _msg,
+      _code: _code,
+      _testMode: _testMode,
       _msgType: _msgType,
       _active_page: "signin"
    });
@@ -164,6 +177,8 @@ app.get("/contactus", function (req, res) {
       _connected: _connected,
       _userType: _userType,
       _msg: _msg,
+      _code: _code,
+      _testMode: _testMode,
       _msgType: _msgType,
       _active_page: "contactus"
    });
@@ -184,6 +199,8 @@ app.get("/addrequest", function (req, res) {
          _phoneNumber: _phoneNumber,
          _userType: _userType,
          _msg: _msg,
+         _code: _code,
+         _testMode: _testMode,
          _msgType: _msgType,
          _active_page: "addrequest"
       });
@@ -262,7 +279,7 @@ app.post("/signin", function (req, res) {
          // no phone numbers founed
 
          //generate random number 
-         let _code = getRndInteger(1000, 9999);
+         _code = getRndInteger(1000, 9999);
          console.log("random number:" + _code);
 
          //create a user account
@@ -274,7 +291,8 @@ app.post("/signin", function (req, res) {
 
          user.save().then(() => console.log('user added successfully!'));
          //send the code
-         _msg = "لقد تم ارسال رمز الدخول عبر SMS" + _code;
+         _msg = "لقد تم ارسال رمز الدخول عبر SMS";
+         _code;
          _msgType = "success";
          res.redirect("/");
          //** */
@@ -313,6 +331,7 @@ app.post("/getcode", function (req, res) {
          //user existe 
          sendSMS(_phoneNumber, phoneNumber.code);
          //send the code
+         _code = phoneNumber.code;
          _msg = "لقد تم ارسال رمز الدخول عبر SMS";
          _msgType = "success";
          res.redirect("/");

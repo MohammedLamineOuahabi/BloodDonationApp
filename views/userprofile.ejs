@@ -1,62 +1,48 @@
 <%-include("partials/header")-%>
 
-<div class="container main-body pt-lg-4    pr-lg-5  pl-lg-5">
-   <div class="row   pt-4 pb-4    pr-lg-5  pl-lg-5 align-items-center   justify-content-center ">
+<div class="col-md-6     pb-md-5 pt-0    pr-lg-5  pl-lg-5 text-right ">
 
-      <div class="col-md-6     pb-md-5 pt-0    pr-lg-5  pl-lg-5 text-right ">
+   <h3 class="h1-responsive font-weight-bold">معلومات المتبرع </h3>
+   <h2 dir="ltr"><%=_phoneNumber%></h2>
+   <hr class="hr-light">
 
-         <h3 class="h1-responsive font-weight-bold">معلومات المتبرع </h3>
-         <h2 dir="ltr"><%=_phoneNumber%></h2>
-         <hr class="hr-light">
-
-      </div>
-      <div class="col-md-6    text-right">
-         <form action="/userprofile" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
-
-            <div class="input-group mb-3 ">
-               <div class="input-group-prepend  w-100">
-                  <select dir="rtl" name="userType" class="custom-select custom-select-md  md-form colorful-select dropdown-primary">
-                     <option value="d">متبرع</option>
-                     <option value="p">مريض</option>
-                  </select>
-
-                  <span class="input-group-text    form-icon"><i class="fas fa-user  mr-auto ml-auto"></i></span>
-               </div>
-            </div>
-
-            <div class="input-group mb-3 ">
-               <div class="input-group-prepend  w-100">
-                  <select dir="rtl" name="bloodType" class="custom-select custom-select-md  md-form colorful-select dropdown-primary">
-
-                     <option value="A">A+</option>
-                     <option value="A-">A-</option>
-                     <option value="B+">B+</option>
-                     <option value="B-">B-</option>
-                     <option value="AB+">AB+</option>
-                     <option value="AB-">AB-</option>
-                     <option value="O+">O+</option>
-                     <option value="O-">O-</option>
-                  </select>
-
-                  <span class="input-group-text    form-icon"><i class="fas fa-user  mr-auto ml-auto"></i></span>
-               </div>
-            </div>
-
-            <%- include("partials/wilaya") -%>
-            <!--             <div class="input-group mb-3">
-               <input type="text" dir="rtl" class="form-control  text-right" id="adress" name="adress" placeholder="حدد مكان تواجدك: المشفى,..." required autocomplete="off" onfocus="this.value=''" maxlength="30">
-               <div class="input-group-prepend">
-                  <span class="input-group-text    form-icon"><i class="fas fa-map-marker-alt   mr-auto ml-auto"></i></span>
-               </div>
-            </div> -->
-
-            <%- include("partials/captcha") -%>
-            <button class="btn btn-danger btn-block" type="submit">تعديل</button>
-         </form>
-      </div>
-   </div>
 </div>
+<div class="col-md-6    text-right">
+   <form action="/userprofile" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
 
+      <div class="input-group mb-3 ">
+         <div class="input-group-prepend  w-100">
+            <select dir="rtl" name="userType" class="custom-select custom-select-md  md-form colorful-select dropdown-primary">
+               <option value="d">متبرع</option>
+               <option value="p">مريض</option>
+            </select>
+
+            <span class="input-group-text    form-icon"><i class="fas fa-user  mr-auto ml-auto"></i></span>
+         </div>
+      </div>
+
+      <div class="input-group mb-3 ">
+         <div class="input-group-prepend  w-100">
+            <select dir="rtl" name="bloodType" class="custom-select custom-select-md  md-form colorful-select dropdown-primary">
+
+               <option value="A">A+</option>
+               <option value="A-">A-</option>
+               <option value="B+">B+</option>
+               <option value="B-">B-</option>
+               <option value="AB+">AB+</option>
+               <option value="AB-">AB-</option>
+               <option value="O+">O+</option>
+               <option value="O-">O-</option>
+            </select>
+
+            <span class="input-group-text    form-icon"><i class="fas fa-user  mr-auto ml-auto"></i></span>
+         </div>
+      </div>
+
+      <%- include("partials/wilaya") -%>
+      <%- include("partials/captcha") -%>
+      <button class="btn btn-danger btn-block" type="submit">تعديل</button>
+   </form>
 </div>
 
 <%- include("partials/footer") -%>

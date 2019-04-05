@@ -1,45 +1,40 @@
 <%-include("partials/header")-%>
-<div class="container main-body pt-lg-4    pr-lg-5  pl-lg-5">
-   <div class="row   pt-4 pb-4    pr-lg-5  pl-lg-5 align-items-center   justify-content-center ">
 
-      <div class="col-md-6     pb-md-5 pt-0    pr-lg-5  pl-lg-5 text-md-right text-center">
+<div class="col-md-6     pb-md-5 pt-0    pr-lg-5  pl-lg-5 text-md-right text-center">
 
-         <h3 class="h1-responsive font-weight-bold">معلومات المتبرع </h3>
-         <h2 dir="ltr"><%=_phoneNumber%></h2>
-         <hr class="hr-light">
-         <p>تسمح هذة الصفحة بتحديد استعداد المتبرع للتبرع في هذه الفترة ام لا,وبالتالي تلقي طلبات التبرع ام لا
-            .</p>
+   <h3 class="h1-responsive font-weight-bold">معلومات المتبرع </h3>
+   <h2 dir="ltr"><%=_phoneNumber%></h2>
+   <hr class="hr-light">
+   <p>تسمح هذة الصفحة بتحديد استعداد المتبرع للتبرع في هذه الفترة ام لا,وبالتالي تلقي طلبات التبرع ام لا
+      .</p>
 
-      </div>
-      <div class="col-md-6    text-right">
-         <form action="/donorstate" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
-            <h5 class="text-right main-text"> هل انت مستعد حاليا للتبرع؟</h5>
-
-            <div class="input-group mb-3 ">
-               <div class="input-group-prepend  w-100">
-                  <select dir="rtl" name="donorState" class="custom-select custom-select-md  md-form colorful-select dropdown-primary ">
-                     <option value="S">نعم </option>
-                     <option value="D">لا</option>
-                  </select>
-
-                  <span class="input-group-text    form-icon"><i class="fas fa-heartbeat  mr-auto ml-auto"></i></span>
-               </div>
-            </div>
-            <%- include("partials/wilaya") -%>
-            <div class="input-group mb-3">
-               <input type="text" dir="ltr" class="form-control  text-right" id="adress" name="adress" placeholder="حدد مكان تواجدك:  ,..." required autocomplete="off" onfocus="this.value=''" maxlength="30">
-               <div class="input-group-prepend">
-                  <span class="input-group-text    form-icon"><i class="fas fa-map-marker-alt   mr-auto ml-auto"></i></span>
-               </div>
-            </div>
-
-            <%- include("partials/captcha") -%>
-            <button class="btn btn-danger btn-block" type="submit">تعديل</button>
-         </form>
-      </div>
-   </div>
 </div>
+<div class="col-md-6    text-right">
+   <form action="/donorstate" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
+      <h5 class="text-right  p-line-height"> هل انت مستعد حاليا للتبرع؟</h5>
 
+      <div class="input-group mb-3 ">
+         <div class="input-group-prepend  w-100">
+            <select dir="rtl" name="donorState" class="custom-select custom-select-md  md-form colorful-select dropdown-primary ">
+               <option value="S">نعم </option>
+               <option value="D">لا</option>
+            </select>
+
+            <span class="input-group-text    form-icon"><i class="fas fa-heartbeat  mr-auto ml-auto"></i></span>
+         </div>
+      </div>
+      <%- include("partials/wilaya") -%>
+      <div class="input-group mb-3">
+         <input type="text" dir="ltr" class="form-control  text-right" id="adress" name="adress" placeholder="حدد مكان تواجدك:  ,..." required autocomplete="off" onfocus="this.value=''" maxlength="30">
+         <div class="input-group-prepend">
+            <span class="input-group-text    form-icon"><i class="fas fa-map-marker-alt   mr-auto ml-auto"></i></span>
+         </div>
+      </div>
+
+      <%- include("partials/captcha") -%>
+      <button class="btn btn-danger btn-block" type="submit">تعديل</button>
+   </form>
+</div>
 </div>
 
 <%- include("partials/footer") -%>

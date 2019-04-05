@@ -1,26 +1,24 @@
 <%-include("partials/header")-%>
-<div class="row   pt-4 pb-4    pr-lg-5  pl-lg-5 justify-content-center ">
 
-   <div class="col-md-6     my-md-auto pt-0    pr-lg-5  pl-lg-5 text-right ">
-      <h3 class="h1-responsive font-weight-bold">استرجاع الكود</h3>
-      <h6 class="text-right main-text">ادخل رقم هاتفك لاسترجاع رمز الدخول</h6>
-      <hr class="hr-light">
-   </div>
+<div class="col-md-6 my-md-auto pt-0    pr-lg-5  pl-lg-5 text-right ">
+   <h2 class="h1-responsive font-weight-bold">استرجاع رمز الدخول</h2>
+   <hr class="hr-light">
+   <p class="text-right  p-line-height">ادخل رقم هاتفك لاسترجاع رمز الدخول</p>
+</div>
 
-   <div class="col-md-6  my-md-auto  text-right">
-      <form action="/getcode" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
+<div class="col-md-6  my-md-auto  text-right">
+   <form action="/getcode" class="form  mr-md-0 mr-auto ml-auto pt-md-3" method="POST">
 
-         <div class="input-group mb-3">
-            <input type="text" dir="ltr" class="form-control  text-right" id="tel" name="phoneNumber" placeholder="رقم الهاتف" aria-label="Username" aria-describedby="basic-addon1" required autocomplete="off" onfocus="this.value=''">
-            <div class="input-group-prepend">
-               <span class="input-group-text    form-icon"><i class="fas fa-mobile-alt  mr-auto ml-auto"></i></span>
-            </div>
+      <div class="input-group mb-3">
+         <input type="text" dir="ltr" class="form-control  text-right" id="tel" name="phoneNumber" placeholder="رقم الهاتف" aria-label="Username" aria-describedby="basic-addon1" required autocomplete="off" onfocus="this.value=''">
+         <div class="input-group-prepend">
+            <span class="input-group-text    form-icon"><i class="fas fa-mobile-alt  mr-auto ml-auto"></i></span>
          </div>
+      </div>
 
-         <%- include("partials/captcha") -%>
-         <button class="btn btn-danger btn-block" type="submit">دخول</button>
-      </form>
-   </div>
+      <%- include("partials/captcha") -%>
+      <button class="btn btn-danger btn-block" type="submit">دخول</button>
+   </form>
 </div>
 
 <%- include("partials/footer") -%>

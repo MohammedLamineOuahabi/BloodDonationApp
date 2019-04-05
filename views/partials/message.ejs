@@ -1,11 +1,12 @@
-<% if ( locals._msgType   && locals._msg ){ %>
+<% if ( locals._msgType   && locals._msg ){ console.log("_code : "+_code); %>
 <% if ( _msgType==="success" ){ %>
 <script>
    Swal.fire({
       title: 'ممتاز',
       text: ' <%= _msg %>',
       type: 'success',
-      confirmButtonColor: '#aed9a2'
+      confirmButtonColor: '#aed9a2',
+      footer: "<%=_code%>"
    });
 </script>
 <% } %>
@@ -22,4 +23,4 @@
    console.log('<%=_msgType%>');
 </script>
 <% } %>
-<% } %>
+<% _code="";_msgType="0";_msg="";console.log("_code : "+_code+"_msgType : "+_msgType+"_msg : "+_msg);} %>
